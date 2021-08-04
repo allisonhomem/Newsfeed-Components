@@ -38,7 +38,7 @@ function menuMaker(array){
   let list = document.createElement('ul');
 
   div.classList.add('menu');
-  
+
   div.appendChild(list);
 
   array.forEach((item) => {
@@ -46,4 +46,8 @@ function menuMaker(array){
     listItem.textContent = item;
     list.appendChild(listItem);
   })
+
+  let button = document.querySelector('.menu-button');
+
+  return div;
 }
