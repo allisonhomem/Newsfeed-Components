@@ -36,6 +36,7 @@ let menuItems = [
 function menuMaker(array){
   let div = document.createElement('div');
   let list = document.createElement('ul');
+  let button = document.querySelector('.menu-button');
 
   div.classList.add('menu');
 
@@ -47,7 +48,14 @@ function menuMaker(array){
     list.appendChild(listItem);
   })
 
-  let button = document.querySelector('.menu-button');
+  button.addEventListener('click', function(event) {
+    div.classList.toggle('menu--open');
+  })
 
   return div;
 }
+
+//Feeding menuItems array to menuMaker function and adding to header
+let header = document.querySelector('.header');
+
+header.appendChild(menuMaker(menuItems));
