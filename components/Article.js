@@ -115,6 +115,7 @@ const data = [
   Refresh the page to see the new article.
 */
 
+//Function that creates div article
   function articleMaker(articleObject){
     let div = document.createElement('div');
     let title = document.createElement('h2');
@@ -125,16 +126,16 @@ const data = [
     }
     let expand = document.createElement('span');
 
-    div.classList('article');
-    paragraphs[0].classList('date');
-    expand.classList('expandButton');
+    div.classList.add('article');
+    paragraphs[0].classList.add('date');
+    expand.classList.add('expandButton');
 
     title.textContent = articleObject['title'];
     paragraphs[0].textContent = articleObject['date'];
     paragraphs[1].textContent = articleObject['firstParagraph'];
     paragraphs[2].textContent = articleObject['secondParagraph'];
     paragraphs[3].textContent = articleObject['thirdParagraph'];
-    expand.textContent = '+';
+    expand.textContent = "+";
 
     expand.addEventListener('click', function(event) {
       div.classList.toggle('article-open');
@@ -148,3 +149,13 @@ const data = [
 
     return div;
   }
+
+  //Loops over array of article objects to grab and populate articles in html
+  let articles = document.querySelector('.articles');
+
+  data.forEach((item) => {
+    articles.appendChild(articleMaker(item));
+  })
+
+
+  
