@@ -150,12 +150,20 @@ const data = [
     return div;
   }
 
+  //Creating new article object and adding to data array
+  const newArticle = {
+    title: 'Brew the Perfect Cup of Coffee with a Chemex',
+    date: 'August 3, 2021',
+    firstParagraph: "Having the right equipment: Chemex and filters, gooseneck kettle, scale, burr grinder and of course the best fresh light roast single origin coffee beans you can find.",
+    secondParagraph: "Precision is Key: Boil water to 205 degrees farenheit and grind 20g of beans medium course. Rinse the filter and get rid of that water (no one wants their coffee to taste like paper). Then add the coffee grounds, level and use a chopstick to create a well. Start a timer and pour 40g of water in concentric circles over the grounds, then swirl. This is the bloom. At 45 seconds add water until 120g. At 1:30 add water until 210g. At 2 minutes add water until 300g, and wait to drain down.",
+    thirdParagraph: "Enjoy on a sunny morning!"
+  }
+
+  data.push(newArticle);  
+  
   //Loops over array of article objects to grab and populate articles in html
   let articles = document.querySelector('.articles');
 
   data.forEach((item) => {
     articles.appendChild(articleMaker(item));
   })
-
-
-  
